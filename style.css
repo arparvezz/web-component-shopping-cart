@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.container{
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+header{
+  margin: 50px 0;
+}
+.page-title{
+  margin: 20px 0;
+}
+
+/* product list */
+.product-list{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
+@media (max-width: 950px){
+  .product-list{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+  }
+}
+@media (max-width: 550px){
+  .product-list{
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+/* product card css */
+.product-img-part{
+  max-width: 600px;
+  width: 100%;
+}
+.product-img{
+  width: 100%;
+}
+.add-to-cart-btn{
+  margin: 5px 0;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  background-color: green;
+  padding: 10px;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+.add-to-cart-btn:hover{
+  background-color: rgb(0, 87, 0);
+  color: white;
+  width: 100%;
+}
