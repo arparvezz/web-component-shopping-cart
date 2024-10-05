@@ -33,8 +33,16 @@ class ProductCard extends HTMLElement{
       qty: 1,
       price: this.price
     }
-    window.cart.items.push(itemObj);
-    console.log(cart.items);
+
+    let itemInCart = window.cart.items.find( item => item.id == itemObj.id) 
+    
+    if(itemInCart){
+      itemInCart.qty++;
+    }else{
+      window.cart.items.push(itemObj)
+    }
+    console.log(window.cart.items);
+
   }
 }
 
