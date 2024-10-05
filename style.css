@@ -61,3 +61,37 @@ header{
   color: white;
   width: 100%;
 }
+
+
+
+/* cart */
+.cart-items-container{
+  background-color: #eaecee;
+  padding: 10px;
+  border: 1px solid #d6dde4;
+}
+.cart-single-item{
+  border: 2px solid white;
+  padding: 5px 10px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+.cart-item-img{
+  max-width: 50px;
+  width: 100%;
+}
+
+
+
+/* footer */
+.footer-inner{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: green;
+  color: white;
+}

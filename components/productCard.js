@@ -6,6 +6,7 @@ class ProductCard extends HTMLElement{
     this.name = this.getAttribute('name');
     this.id = this.getAttribute('id');
     this.price = this.getAttribute('price');
+    this.img = this.getAttribute('img');
 
     this.innerHTML = `
       <div class="product-card-wrapper">
@@ -31,7 +32,8 @@ class ProductCard extends HTMLElement{
       id: this.id,
       name: this.name,
       qty: 1,
-      price: this.price
+      price: this.price,
+      img: this.img
     }
 
     let itemInCart = window.cart.items.find( item => item.id == itemObj.id) 
@@ -41,7 +43,7 @@ class ProductCard extends HTMLElement{
     }else{
       window.cart.items.push(itemObj)
     }
-    console.log(window.cart.items);
+    document.querySelector('cart-items').render()
 
   }
 }
