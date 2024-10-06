@@ -3,21 +3,34 @@ class CartItems extends HTMLElement{
     super();
   }
 
+  updateQty(index,value){
+    window.cart.items[index].qty = value;
+    this.render();
+  }
   render(){
     this.innerHTML = ''
     let cartItemsContainer = document.createElement('div');
     cartItemsContainer.classList.add('cart-items-container')
     let singleItem = document.createElement('div');
 
-    window.cart.items.forEach((item,ind) => {      
+    if(cart.items.length > 0) {
+      
+    }
+    window.cart.items.forEach((item,ind) => {    
+      if(item.qty > 0){
+      
       singleItem.innerHTML += `
         <div class="cart-single-item">
           <img class="cart-item-img" src="${item.img}"/>
           <h4 class="cart-item-name">${item.name}</h4>
-          <p class="cart-item-name">$${item.price}</p>
-          <p class="cart-item-qty">${item.qty}</p>
+          <quantity-input class="cart-item-qty">
+            <button class="plus-btn" type="button" name="plus">+</button>
+            <input class="qty-input-box" type="number" value="${item.qty}" min="0" id="quantity-${ind}" data-index="${ind}"/>
+            <button class="minus-btn" type="button" name="minus">-</button>
+          </quantity-input>
+          <p class="cart-item-price">$${item.price * item.qty}</p>
         </div>
-      `
+      `}  
     });
     cartItemsContainer.appendChild(singleItem);
     this.appendChild(cartItemsContainer)
@@ -33,7 +46,11 @@ class CartItems extends HTMLElement{
         <p>$${cartTotal}</p>
       </div>
     `
-    this.appendChild(footer)
+    if(cartTotal > 0){
+      this.appendChild(footer)
+    }else{
+      cartItemsContainer.style.display = 'none'
+    }
   }
 }
 
