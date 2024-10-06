@@ -79,6 +79,16 @@ header{
   align-items: center;
   gap: 50px;
 }
+@media (max-width: 720px){
+  .cart-single-item{
+    gap: 10px;
+  }
+  .qty-input-box{
+    max-width: 100px;
+    min-width: 30px;
+    width: 100%;
+  }
+}
 .cart-item-img{
   max-width: 50px;
   width: 100%;
